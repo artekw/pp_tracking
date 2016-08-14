@@ -51,8 +51,8 @@ def output(number):
 		else:
 			print u"Przesyłka numer %s została doręczona" % (colored(parcel.numer, 'white', 'on_red'))
 		print "------------------------------------------------------"
-		print "Kraj nadania: %s" % colored(parcel.danePrzesylki.krajNadania, 'green')
-		print "Kraj przeznaczenia: %s" % colored(parcel.danePrzesylki.krajPrzezn, 'green')
+		print "Kraj nadania: %s" % colored(parcel.danePrzesylki.krajNadania.capitalize(), 'green')
+		print "Kraj przeznaczenia: %s" % colored(parcel.danePrzesylki.krajPrzezn.capitalize(), 'green')
 		print u"Rodzaj przesyłki: %s" % colored(parcel.danePrzesylki.rodzPrzes, 'green')
 		print "------------------------------------------------------"
 		print colored(statusy[0]['czas'], 'blue'), "|", colored(statusy[0]['komunikat'], 'cyan'), colored(statusy[0]['urzad'], 'green')
