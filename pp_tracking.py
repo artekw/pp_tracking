@@ -15,6 +15,8 @@ from suds.client import Client
 from termcolor import colored
 from docopt import docopt
 
+debug = False
+
 url = 'https://tt.poczta-polska.pl/Sledzenie/services/Sledzenie?wsdl'
 
 client = Client(url)
@@ -24,24 +26,43 @@ security.tokens.append(token)
 client.set_options(wsse=security)
 
 def output(number):
+	doreczono = False
 	try:
+		statusy = [] # lista statusów
 		parcel = client.service.sprawdzPrzesylke(number)
+		if debug:
+			print parcel
 
-		statusy = {item.czas: item.nazwa for item in parcel.danePrzesylki.zdarzenia.zdarzenie}
+		if parcel.danePrzesylki.zakonczonoObsluge:
+			doreczono = True
+
+		for item in parcel.danePrzesylki.zdarzenia.zdarzenie:
+			if item.jednostka.nazwa == None:
+				item.jednostka.nazwa = ""
+			status = {'komunikat': item.nazwa, 'czas': item.czas, 'urzad': item.jednostka.nazwa}
+			statusy.append(status)
+		statusy = sorted(statusy, reverse=True)
+		if debug:
+			print statusy
 
 		print "------------------------------------------------------"
-		print u"Przesyłka nr. %s" % (colored(parcel.numer, 'white', 'on_red'))
+		if not doreczono:
+			print u"Przesyłka numer %s w drodze " % (colored(parcel.numer, 'white', 'on_red'))
+		else:
+			print u"Przesyłka numer %s została doręczona" % (colored(parcel.numer, 'white', 'on_red'))
 		print "------------------------------------------------------"
 		print "Kraj nadania: %s" % colored(parcel.danePrzesylki.krajNadania, 'green')
 		print "Kraj przeznaczenia: %s" % colored(parcel.danePrzesylki.krajPrzezn, 'green')
 		print u"Rodzaj przesyłki: %s" % colored(parcel.danePrzesylki.rodzPrzes, 'green')
 		print "------------------------------------------------------"
-		for k,v in statusy.iteritems():
-			print colored(k, 'blue'), colored(v, 'cyan')
+		print colored(statusy[0]['czas'], 'blue'), "|", colored(statusy[0]['komunikat'], 'cyan'), colored(statusy[0]['urzad'], 'green')
+		print "------------------------------------------------------"
+		for status in statusy[1:]:
+			print colored(status['czas'], 'blue'), "|", colored(status['komunikat'], 'cyan'), colored(status['urzad'], 'green')
 		print "------------------------------------------------------"
 	except AttributeError, e:
 		print "------------------------------------------------------"
-		print colored(u"Brak przesyłki o takim numerze", 'green')
+		print colored(u"Brak przesyłki o takim numerze!", 'green')
 		print "------------------------------------------------------"
 
 if __name__ == '__main__':

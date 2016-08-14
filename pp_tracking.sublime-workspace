@@ -1,0 +1,305 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"jso",
+				"jsonify"
+			],
+			[
+				"C",
+				"Coordinates"
+			],
+			[
+				"re",
+				"resultQ"
+			],
+			[
+				"rou",
+				"routeProvider"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"node",
+				"nodemap"
+			],
+			[
+				"s",
+				"style	Attr"
+			],
+			[
+				"fot",
+				"font-size"
+			],
+			[
+				"bard",
+				"border-radius"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"par",
+				"parseObj"
+			],
+			[
+				"js",
+				"jsonObj"
+			],
+			[
+				"dec",
+				"decoded"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"_",
+				"_new_value"
+			],
+			[
+				"j",
+				"jsontree"
+			],
+			[
+				"data",
+				"data_n1"
+			],
+			[
+				"sec",
+				"scale"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/artek/projekty/gps-track/templates/map.html",
+		"/home/artek/projekty/gps-track/app.py",
+		"/home/artek/tmp/pp.py",
+		"/home/artek/#workflow/timelapses/postprocess.sh",
+		"/home/artek/projekty/gps-track/templates/base.html",
+		"/home/artek/Desktop/GPX/6.08-polonina.gpx",
+		"/home/artek/projekty/gps-track/tracker.py",
+		"/home/artek/projekty/gps-track/wsgi.py",
+		"/home/artek/projekty/gps-track/templates/index.html",
+		"/home/artek/projekty/gps-track/templates/points.html",
+		"/home/artek/projekty/gps-track/todo",
+		"/home/artek/projekty/gps-track/templates/test.html",
+		"/home/artek/projekty/gps-track/static/awsm.css",
+		"/home/artek/projekty/gps-track/static/awsm.min.css",
+		"/home/artek/projekty/gps-track/docs",
+		"/home/artek/projekty/gps-track/template/points.html",
+		"/home/artek/projekty/gps-track/json2sql.py",
+		"/run/user/1000/gvfs/smb-share:server=beaglebone,share=matrix/matrixblock-py/matrixblock.py",
+		"/run/user/1000/gvfs/smb-share:server=beaglebone,share=matrix/matrixblock-py/HT1632c.py",
+		"/run/user/1000/gvfs/smb-share:server=beaglebone,share=matrix/matrixblock-py/test_block.py",
+		"/run/user/1000/gvfs/smb-share:server=beaglebone,share=matrix/matrixblock-py/readme.md",
+		"/run/user/1000/gvfs/smb-share:server=beaglebone,share=matrix/matrixblock-py/shed_test.py",
+		"/run/user/1000/gvfs/smb-share:server=beaglebone,share=matrix/matrixblock-py/test.py",
+		"/run/user/1000/gvfs/smb-share:server=beaglebone,share=matrix/matrixblock-py/znak.py",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/static/css/styl.css",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/views/graphs.tpl",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/static/js/sensmonjs.js",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/views/info.tpl",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/views/base.tpl",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/views/dash.tpl",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/README.md",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/help.txt",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/static/conf/nodemap.json",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/sensnode/README.md",
+		"/home/artek/tmp/jsont.py",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/sensnode/store.py",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/sensmon.py",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/sensnode/config.py",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/sensnode/decoder.py",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/static/conf/settings.json",
+		"/run/user/1000/gvfs/smb-share:server=sensmon,share=sensmon/sensnode/connect.py",
+		"/home/artek/projekty/sensmon-app/window.html",
+		"/home/artek/projekty/sensmon-app/connect.js",
+		"/home/artek/projekty/sensmon-app/manifest.json",
+		"/home/artek/projekty/sensmon-app/background.js"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"p",
+			"r",
+			"resultQ",
+			"taskQ",
+			"resultQ",
+			"taskQ",
+			"connect",
+			"result_queue",
+			"task_queue",
+			"d",
+			"title",
+			"response",
+			"inverse",
+			"16",
+			"parseObj",
+			"sortedJSONObj",
+			"clients",
+			"outjson",
+			"input_data",
+			"tmp",
+			"type",
+			"array",
+			"nodes",
+			"custom"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "pp_tracking.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 219.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
