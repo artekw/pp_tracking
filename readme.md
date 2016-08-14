@@ -5,6 +5,7 @@
 
     $ sudo pip install docopt termcolor suds
     $ git clone https://github.com/artekw/pp_tracking
+    $ cd pp_tracking
     $ chmod +x pp_tracking.py
 
 ##Użycie:
