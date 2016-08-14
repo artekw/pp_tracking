@@ -13,7 +13,7 @@
 
 ##Działanie:
 
-    $ pp_tracking$ python pp_tracking.py RK376492XXXX
+    $ pp_tracking.py RK376492XXXX
     ------------------------------------------------------
     Przesyłka numer RK376492XXXX została doręczona
     ------------------------------------------------------
