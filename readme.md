@@ -3,6 +3,8 @@
 
 ##Instalacja:
 
+Ubuntu/Debian
+
     $ sudo pip install docopt termcolor suds
     $ git clone https://github.com/artekw/pp_tracking
     $ cd pp_tracking
