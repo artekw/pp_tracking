@@ -45,25 +45,25 @@ def output(number):
 		if debug:
 			print statusy
 
-		print "------------------------------------------------------"
+		print "---------------------------------------------------------------------"
 		if not doreczono:
 			print u"Przesyłka numer %s w drodze " % (colored(parcel.numer, 'white', 'on_red'))
 		else:
 			print u"Przesyłka numer %s została doręczona" % (colored(parcel.numer, 'white', 'on_red'))
-		print "------------------------------------------------------"
-		print "Kraj nadania: %s" % colored(parcel.danePrzesylki.krajNadania.capitalize(), 'green')
-		print "Kraj przeznaczenia: %s" % colored(parcel.danePrzesylki.krajPrzezn.capitalize(), 'green')
-		print u"Rodzaj przesyłki: %s" % colored(parcel.danePrzesylki.rodzPrzes, 'green')
-		print "------------------------------------------------------"
+		print "---------------------------------------------------------------------"
+		print "Kraj nadania: \t\t%s" % colored(parcel.danePrzesylki.krajNadania.capitalize(), 'green')
+		print "Kraj przeznaczenia: \t%s" % colored(parcel.danePrzesylki.krajPrzezn.capitalize(), 'green')
+		print u"Rodzaj przesyłki: \t%s" % colored(parcel.danePrzesylki.rodzPrzes, 'green')
+		print "---------------------------------------------------------------------"
 		print colored(statusy[0]['czas'], 'blue'), "|", colored(statusy[0]['komunikat'], 'cyan'), colored(statusy[0]['urzad'], 'green')
-		print "------------------------------------------------------"
+		print "---------------------------------------------------------------------"
 		for status in statusy[1:]:
 			print colored(status['czas'], 'blue'), "|", colored(status['komunikat'], 'cyan'), colored(status['urzad'], 'green')
-		print "------------------------------------------------------"
+		print "---------------------------------------------------------------------"
 	except AttributeError, e:
-		print "------------------------------------------------------"
+		print "---------------------------------------------------------------------"
 		print colored(u"Brak przesyłki o takim numerze!", 'green')
-		print "------------------------------------------------------"
+		print "---------------------------------------------------------------------"
 
 if __name__ == '__main__':
 	arguments = docopt(__doc__, version='0.1')
