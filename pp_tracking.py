@@ -27,6 +27,7 @@ client.set_options(wsse=security)
 
 def output(number):
 	doreczono = False
+	krajowy = False
 	try:
 		statusy = [] # lista statusów
 		parcel = client.service.sprawdzPrzesylke(number)
@@ -51,14 +52,18 @@ def output(number):
 		else:
 			print u"Przesyłka numer %s została doręczona" % (colored(parcel.numer, 'white', 'on_red'))
 		print "---------------------------------------------------------------------"
+		if parcel.danePrzesylki.krajNadania == "POLSKA":
+			krajowy = True
+
 		if parcel.danePrzesylki.krajNadania != None:
 			print "Kraj nadania: \t\t%s" % colored(parcel.danePrzesylki.krajNadania.capitalize(), 'green')
 		else:
 			print "Kraj nadania: \t\t%s" % colored("Brak danych", 'green')
-		if parcel.danePrzesylki.krajPrzezn != None:
-			print "Kraj przeznaczenia: \t%s" % colored(parcel.danePrzesylki.krajPrzezn.capitalize(), 'green')
-		else:
-			print "Kraj przeznaczenia: \t%s" % colored("Brak danych", 'green')
+		if not krajowy:
+			if parcel.danePrzesylki.krajPrzezn != None:
+				print "Kraj przeznaczenia: \t%s" % colored(parcel.danePrzesylki.krajPrzezn.capitalize(), 'green')
+			else:
+				print "Kraj przeznaczenia: \t%s" % colored("Brak danych", 'green')
 		if parcel.danePrzesylki.rodzPrzes != None:
 			print u"Rodzaj przesyłki: \t%s" % colored(parcel.danePrzesylki.rodzPrzes, 'green')
 		else:
