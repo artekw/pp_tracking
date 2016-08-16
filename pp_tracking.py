@@ -39,7 +39,7 @@ def output(number):
 		for item in parcel.danePrzesylki.zdarzenia.zdarzenie:
 			if item.jednostka.nazwa == None:
 				item.jednostka.nazwa = ""
-			status = {'komunikat': item.nazwa, 'czas': item.czas, 'urzad': item.jednostka.nazwa}
+			status = {'komunikat': item.kod, 'czas': item.czas, 'urzad': item.jednostka.nazwa}
 			statusy.append(status)
 		statusy = sorted(statusy, reverse=True)
 		if debug:
@@ -51,9 +51,18 @@ def output(number):
 		else:
 			print u"Przesyłka numer %s została doręczona" % (colored(parcel.numer, 'white', 'on_red'))
 		print "---------------------------------------------------------------------"
-		print "Kraj nadania: \t\t%s" % colored(parcel.danePrzesylki.krajNadania.capitalize(), 'green')
-		print "Kraj przeznaczenia: \t%s" % colored(parcel.danePrzesylki.krajPrzezn.capitalize(), 'green')
-		print u"Rodzaj przesyłki: \t%s" % colored(parcel.danePrzesylki.rodzPrzes, 'green')
+		if parcel.danePrzesylki.krajNadania != None:
+			print "Kraj nadania: \t\t%s" % colored(parcel.danePrzesylki.krajNadania.capitalize(), 'green')
+		else:
+			print "Kraj nadania: \t\t%s" % colored("Brak danych", 'green')
+		if parcel.danePrzesylki.krajPrzezn != None:
+			print "Kraj przeznaczenia: \t%s" % colored(parcel.danePrzesylki.krajPrzezn.capitalize(), 'green')
+		else:
+			print "Kraj przeznaczenia: \t%s" % colored("Brak danych", 'green')
+		if parcel.danePrzesylki.rodzPrzes != None:
+			print u"Rodzaj przesyłki: \t%s" % colored(parcel.danePrzesylki.rodzPrzes, 'green')
+		else:
+			print u"Rodzaj przesyłki: \t%s" % colored("Brak danych", 'green')
 		print "---------------------------------------------------------------------"
 		print colored(statusy[0]['czas'], 'blue'), "|", colored(statusy[0]['komunikat'], 'cyan'), colored(statusy[0]['urzad'], 'green')
 		print "---------------------------------------------------------------------"
