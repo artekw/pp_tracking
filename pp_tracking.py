@@ -39,7 +39,7 @@ def output(number):
 		for item in parcel.danePrzesylki.zdarzenia.zdarzenie:
 			if item.jednostka.nazwa == None:
 				item.jednostka.nazwa = ""
-			status = {'komunikat': item.kod, 'czas': item.czas, 'urzad': item.jednostka.nazwa}
+			status = {'komunikat': item.nazwa, 'czas': item.czas, 'urzad': item.jednostka.nazwa}
 			statusy.append(status)
 		statusy = sorted(statusy, reverse=True)
 		if debug:
