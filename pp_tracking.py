@@ -15,7 +15,7 @@ from suds.client import Client
 from termcolor import colored
 from docopt import docopt
 
-debug = True
+debug = False
 
 url = 'https://tt.poczta-polska.pl/Sledzenie/services/Sledzenie?wsdl'
 
