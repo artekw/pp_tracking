@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """Sledzenie przesyłek Poczty Polskiej
@@ -32,7 +32,7 @@ def output(number):
 		statusy = [] # lista statusów
 		parcel = client.service.sprawdzPrzesylke(number)
 		if debug:
-			print parcel
+			print(parcel)
 
 		if parcel.danePrzesylki.zakonczonoObsluge:
 			doreczono = True
@@ -42,46 +42,46 @@ def output(number):
 				item.jednostka.nazwa = ""
 			status = {'komunikat': item.nazwa, 'czas': item.czas, 'urzad': item.jednostka.nazwa}
 			statusy.append(status)
-		statusy = sorted(statusy, reverse=True)
+		#statusy = sorted(statusy, reverse=True)
 		if debug:
-			print statusy
+			print(statusy)
 
-		print "---------------------------------------------------------------------"
+		print("---------------------------------------------------------------------")
 		if not doreczono:
-			print u"Przesyłka numer %s w drodze " % (colored(parcel.numer, 'white', 'on_red'))
+			print("Przesyłka numer %s w drodze " % (colored(parcel.numer, 'white', 'on_red')))
 		else:
-			print u"Przesyłka numer %s została doręczona" % (colored(parcel.numer, 'white', 'on_red'))
-		print "---------------------------------------------------------------------"
+			print("Przesyłka numer %s została doręczona" % (colored(parcel.numer, 'white', 'on_red')))
+		print("---------------------------------------------------------------------")
 		if parcel.danePrzesylki.krajNadania == "POLSKA":
 			krajowy = True
 
 		if parcel.danePrzesylki.krajNadania != None:
-			print "Kraj nadania: \t\t%s" % colored(parcel.danePrzesylki.krajNadania.capitalize(), 'green')
+			print("Kraj nadania: \t\t%s" % colored(parcel.danePrzesylki.krajNadania.capitalize(), 'green'))
 		else:
-			print "Kraj nadania: \t\t%s" % colored("Brak danych", 'green')
+			print("Kraj nadania: \t\t%s" % colored("Brak danych", 'green'))
 		if not krajowy:
 			if parcel.danePrzesylki.krajPrzezn != None:
-				print "Kraj przeznaczenia: \t%s" % colored(parcel.danePrzesylki.krajPrzezn.capitalize(), 'green')
+				print("Kraj przeznaczenia: \t%s" % colored(parcel.danePrzesylki.krajPrzezn.capitalize(), 'green'))
 			else:
-				print "Kraj przeznaczenia: \t%s" % colored("Brak danych", 'green')
+				print("Kraj przeznaczenia: \t%s" % colored("Brak danych", 'green'))
 		if parcel.danePrzesylki.rodzPrzes != None:
-			print u"Rodzaj przesyłki: \t%s" % colored(parcel.danePrzesylki.rodzPrzes, 'green')
+			print("Rodzaj przesyłki: \t%s" % colored(parcel.danePrzesylki.rodzPrzes, 'green'))
 		else:
-			print u"Rodzaj przesyłki: \t%s" % colored("Brak danych", 'green')
-		print "---------------------------------------------------------------------"
-		print colored(statusy[0]['czas'], 'blue'), "|", colored(statusy[0]['komunikat'], 'cyan'), colored(statusy[0]['urzad'], 'green')
-		print "---------------------------------------------------------------------"
+			print("Rodzaj przesyłki: \t%s" % colored("Brak danych", 'green'))
+		print("---------------------------------------------------------------------")
+		print(colored(statusy[0]['czas'], 'blue'), "|", colored(statusy[0]['komunikat'], 'cyan'), colored(statusy[0]['urzad'], 'green'))
+		print("---------------------------------------------------------------------")
 		for status in statusy[1:]:
-			print colored(status['czas'], 'blue'), "|", colored(status['komunikat'], 'cyan'), colored(status['urzad'], 'green')
-		print "---------------------------------------------------------------------"
-	except AttributeError, e:
-		print "---------------------------------------------------------------------"
-		print colored(u"Brak przesyłki o takim numerze!", 'green')
-		print "---------------------------------------------------------------------"
+			print(colored(status['czas'], 'blue'), "|", colored(status['komunikat'], 'cyan'), colored(status['urzad'], 'green'))
+		print("---------------------------------------------------------------------")
+	except AttributeError as e:
+		print("---------------------------------------------------------------------")
+		print(colored("Brak przesyłki o takim numerze!", 'green'))
+		print("---------------------------------------------------------------------")
 
 if __name__ == '__main__':
 	arguments = docopt(__doc__, version='0.1')
 	if arguments['INPUT'] != []:
 		output(arguments['INPUT'])
 	else:
-		print colored(u"Podaj numer przesyłki", 'white', 'on_red')
+		print(colored("Podaj numer przesyłki", 'white', 'on_red'))
